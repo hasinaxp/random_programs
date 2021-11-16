@@ -15,13 +15,15 @@ vector<string> Tokenize(string & expression, unordered_map<string, int> & opMap)
         if( c == ' ') continue;
         else if( opMap.find(string(1, c)) != opMap.end())
         {
-            tokens.push_back(temp);
+            if(temp != "")
+                tokens.push_back(temp);
             temp = "";
             tokens.push_back(string(1, c));
         }
         else temp += c;
     }
-    tokens.push_back(temp);
+    if(temp != "")
+        tokens.push_back(temp);
 
     return tokens;
 }
