@@ -23,7 +23,7 @@ float DotProduct(const Vec2 &v1, const Vec2 &v2)
 }
 
 
-class PerlinNoise
+class PerlinNoise2D
 {
     private:
         vector<Vec2> _gradients;
@@ -104,7 +104,7 @@ class PerlinNoise
 class Demo : public olc::PixelGameEngine
 {
     public:
-        PerlinNoise noise;
+        PerlinNoise2D noise;
 
         float offsetX, offsetY;
         float scale;
